@@ -16,13 +16,6 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it 'damages the player' do
-      expect(maud).to receive(:receive_damage)
-      john.attack(maud)
-    end
-  end
-
   describe '#receive_damage' do
     it 'reduces the player hitpoints' do
       expect { john.receive_damage }.to change { john.hit_points }.by(-10)
