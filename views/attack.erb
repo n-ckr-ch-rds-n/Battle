@@ -1,4 +1,2 @@
-<h1>You have attacked <%= @player2.name %></h1>
-<form action="/play" method="get">
-  <input type="submit" value="Continue">
-</form>
+<h1><%= @game.player1.name %> attacked <%= @game.player2.name %></h1>
+<a href ="/play">Continue</a>
