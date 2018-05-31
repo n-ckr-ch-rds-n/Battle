@@ -21,4 +21,14 @@ feature 'Testing attack functionality' do
     click_button 'Attack'
     expect(page).to have_content 'Maud attacked John'
   end
+
+  scenario 'reduce Player 1 HP by 10' do
+    sign_in_and_play
+    click_button 'Attack'
+    click_button 'Continue'
+    click_button 'Attack'
+    click_button 'Continue'
+    expect(page).not_to have_content 'John: 60HP'
+    expect(page).to have_content 'John: 50HP'
+  end
 end
